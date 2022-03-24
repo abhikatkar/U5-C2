@@ -16,8 +16,10 @@ function App() {
         {toggle}
       </button>
       {/* Show component based on state */}
+
+      {toggle=="Table" ? <Rentals/>:<AddHouse/>}
       
-       <Rentals/>
+       {/* <Rentals/> */}
        {/* <AddHouse/> */}
 
       <br />

@@ -23,7 +23,7 @@ export const AddHouse = () => {
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        axios.post("http://localhost:8080/houses", formData).then(()=>{
+        axios.post("http://localhost:8080/house", formData).then(()=>{
             alert("Data submited successfuly")
         });
     }

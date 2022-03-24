@@ -1,6 +1,14 @@
 import "./Rentals.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 
 export const Rentals = () => {
+ let [item, setItem] = useState([])
+ useEffect(()=>{
+   axios.get("http://localhost:8080/house").then(res => {setItem(res.data)})
+ },[])
+
   return (
     <div className="rentalContainer">
       <div className="sortingButtons">
@@ -29,7 +37,7 @@ export const Rentals = () => {
           </tr>
         </thead>
         <tbody>
-          {[].map((house, index) => {
+          {item.map((house, index) => {
             return (
               <tr key={house.id} className="houseDetails">
                 <td className="houseId">{house.id}</td>
